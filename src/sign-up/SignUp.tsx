@@ -20,8 +20,8 @@ import ColorModeSelect from "../shared-theme/ColorModeSelect";
 import {
   GoogleIcon,
   FacebookIcon,
-  SitemarkIcon,
 } from "./components/CustomIcons";
+import MediaBluetoothOnIcon from '@mui/icons-material/MediaBluetoothOn';
 import musicImage from "../assets/music.jpeg"
 
 const Card = styled(MuiCard)(({ theme }) => ({
@@ -62,7 +62,7 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
     backgroundRepeat: "no-repeat",
     ...theme.applyStyles("dark", {
       backgroundImage:
-        "radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))",
+        "radial-gradient(at 50% 50%, hsla(180, 18.30%, 33.10%, 0.90), hsla(180, 37.80%, 61.60%, 0.90))",
     }),
   },
 }));
@@ -131,11 +131,11 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
       <CssBaseline enableColorScheme />
       <ColorModeSelect sx={{ position: "fixed", top: "1rem", right: "1rem" }} />
       <SignUpContainer direction={{ xl: "row", lg: "row", md: "column" }} sx={{ alignItems: "center", justifyContent: "center"}}>
-      <Card sx={{ width: 400, height: 706, display: "flex", padding: 0, gap: 0, borderTopRightRadius: 0, borderBottomRightRadius: 0, borderRight: "none"}}>
-      <CardContent sx={{  padding: 2}}>
+      <Card sx={{ width: 400, height: 710, display: "flex", padding: 0, gap: 0, borderTopRightRadius: 0, borderBottomRightRadius: 0, borderRight: "none"}}>
+      <CardContent sx={{  padding: 2, backgroundColor: "#185858", color: "white"}}>
           <Typography variant="h5" >
             Create your Account and start 
-            Listening to your Top Musics FOR FREE
+            Listening to your Top Musics <br />FOR FREE
           </Typography>
         </CardContent>
         <CardMedia 
@@ -147,7 +147,7 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
         />
       </Card>
         <Card variant="outlined" sx={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0, borderLeft: "none"}}>
-          <SitemarkIcon />
+        <MediaBluetoothOnIcon />
           <Typography
             component="h1"
             variant="h4"
@@ -168,7 +168,7 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
                 required
                 fullWidth
                 id="name"
-                placeholder="John Snow"
+                placeholder="Your name"
                 error={nameError}
                 helperText={nameErrorMessage}
                 color={nameError ? "error" : "primary"}
@@ -180,7 +180,7 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
                 required
                 fullWidth
                 id="email"
-                placeholder="example@email.com"
+                placeholder="example@gmail.com"
                 name="email"
                 autoComplete="email"
                 variant="outlined"
